@@ -1,0 +1,87 @@
+"""Local UI smoke tests for the synthetic-only prototype, not production validation."""
+from pathlib import Path
+import json, os, shutil
+from playwright.sync_api import sync_playwright
+D=Path(__file__).resolve().parent
+checks=[]
+def check(name, ok):
+    assert ok, name
+    checks.append({'name':name,'passed':True})
+with sync_playwright() as p:
+    chrome=os.environ.get('CHROMIUM_PATH') or shutil.which('chromium')
+    browser=p.chromium.launch(headless=True,**({'executable_path':chrome} if chrome else {}),args=['--no-sandbox'])
+    page=browser.new_page(viewport={'width':1500,'height':1100},device_scale_factor=1)
+    errors=[]
+    page.on('pageerror',lambda e:errors.append(str(e)))
+    page.set_content((D/'系辦預審互動原型.html').read_text(encoding='utf-8'), wait_until='domcontentloaded')
+    check('Initial screen is work queue',page.locator('#queue').is_visible())
+    page.locator('nav [data-view=import]').click()
+    page.locator('#startReview').click()
+    check('Cannot start without scope acknowledgement',bool(page.locator('#importError').inner_text()))
+    page.locator('#identityOK').check();page.locator('#startReview').click()
+    check('Starts without any automatic approvals',page.evaluate('demoInspect().stats.done')==0)
+    def select(row):
+        page.locator(f'[data-row={row}]').click()
+        if not page.locator('#decisionForm').is_visible():
+            page.locator('[data-detailtab=evidence]').click()
+    def decide(row, action, reason=None):
+        select(row)
+        page.locator(f'input[name=action][value={action}]').check()
+        if reason:page.locator('#reason').fill(reason)
+        page.locator('#decisionForm button[type=submit]').click()
+    decide('r7','accept');decide('r24','accept')
+    check('Verified confirmed courses give 5 unique credits',page.evaluate('demoInspect().stats.actual')==5)
+    decide('r39','duplicate')
+    check('Correction requires rationale',bool(page.locator('#decisionError').inner_text()))
+    decide('r39','duplicate','同一修課紀錄DEMO-C002，原表重複列入，總額不再增加。')
+    check('Duplicate form row does not double credits',page.evaluate('demoInspect().stats.actual')==5)
+    select('r56')
+    page.screenshot(path=str(D/'介面預覽_逐列核對.png'),full_page=True)
+    decide('r56','correct','依合成正式紀錄為2學分；保留Q56原填3。')
+    check('Credit correction uses official demo value, not student claim',page.evaluate('demoInspect().stats.actual')==7)
+    decide('r64','reclassify','合成課程資料分類為領域課程，不是基本素養。')
+    check('Reclassification counts the credit once',page.evaluate('demoInspect().stats.actual')==9)
+    decide('r25','conditional','合成選課資料顯示修習中；只列入1151通過假設。')
+    check('In-progress is only in projection',page.evaluate('demoInspect().stats.actual===9 && demoInspect().stats.projected===12'))
+    decide('r76','conditional','五門實績，加一門修習中；零學分不影響門次確認。')
+    decide('r79','request','請附學術倫理通過紀錄或由系辦向主責單位查證。')
+    check('Missing evidence is pending, not automatic failure',page.evaluate('demoInspect().decisions.r79.action==="request" && demoInspect().stats.waiting===1'))
+    check('All eight rows can be processed while a proof is still pending',page.evaluate('demoInspect().stats.done===8'))
+    page.locator('nav [data-view=result]').click()
+    page.screenshot(path=str(D/'介面預覽_結果與補件.png'),full_page=True)
+    check('Whole degree is explicitly not evaluated', '未作判定' in page.locator('#result').inner_text())
+    page.locator('#reservePreview').click()
+    check('Graduate exclusion preview is blocked, not silently accepted','不能確認研究所預留' in page.locator('#modalBody').inner_text())
+    page.locator('#modalPrimary').click()
+    check('Graduate preview leaves actual credits unchanged',page.evaluate('demoInspect().stats.actual')==9)
+    page.locator('nav [data-view=review]').click()
+    page.locator('#simulateUpdate').click()
+    check('New evidence invalidates only affected row',page.evaluate('!demoInspect().decisions.r25 && !!demoInspect().decisions.r56 && demoInspect().stats.done===7'))
+    check('Withdrawal removes conditional credits',page.evaluate('demoInspect().stats.projected===9'))
+    check('Submitted in-progress marker remains immutable',page.evaluate('demoInspect().original.find(x=>x.id==="r25").raw==="◎"'))
+    decide('r25','exclude','新的合成選課資料已停修，本次試算不再列入。')
+    page.locator('#simulateEthics').click()
+    check('New proof requires fresh review',page.evaluate('!demoInspect().decisions.r79'))
+    decide('r79','proof','已核對合成校方通過證明DEMO-ETHICS-01。')
+    page.locator('nav [data-view=result]').click()
+    page.locator('#confirmReport').click();page.locator('#modalPrimary').click()
+    check('Sealing requires scope confirmation',bool(page.locator('#sealError').inner_text()))
+    page.locator('#sealOK').check()
+    with page.expect_download() as download:
+        page.locator('#modalPrimary').click()
+    downloaded=download.value
+    downloaded.save_as(str(D/'sample_sealed_demo.json'))
+    packet=json.loads((D/'sample_sealed_demo.json').read_text())
+    check('Export refuses a whole-degree determination',packet['whole_degree_determination']=='NOT_EVALUATED' and packet['not_a_valid_signature'])
+    original_reason=packet['decisions']['r56']['reason']
+    page.locator('nav [data-view=review]').click()
+    decide('r56','correct','更正說明文字第二版；仍為2學分。')
+    check('Already sealed snapshot stays unchanged',page.evaluate('demoInspect().sealed[0].decisions.r56.reason')==original_reason)
+    check('Student original claimed credit stays 3',page.evaluate('demoInspect().original.find(x=>x.id==="r56").q===3'))
+    page.set_viewport_size({'width':760,'height':1000})
+    check('Review workspace remains usable at narrow viewport',page.locator('#review').is_visible())
+    page.screenshot(path=str(D/'介面預覽_窄視窗.png'),full_page=True)
+    check('No uncaught browser JavaScript errors',not errors)
+    browser.close()
+(D/'prototype_test_results.json').write_text(json.dumps({'scope':'Local synthetic UI smoke tests only; no real academic records or production backend','passed':len(checks),'checks':checks},ensure_ascii=False,indent=2),encoding='utf-8')
+print(f'PASS {len(checks)} synthetic UI checks')

@@ -1,0 +1,716 @@
+{
+  "artifact_type": "ARETE_HCI_DEMO_ONLY",
+  "mode": "SEALED_SCOPE_REVIEW",
+  "created_at": "2026-09-08T04:16:11.568Z",
+  "student": "SYNTHETIC-DEMO-112-001",
+  "template_sha256": "a2c22bd18ae618fdacbc290d90ed1da89e331d37b424dfc095ae59c57657f199",
+  "data_version": 3,
+  "whole_degree_determination": "NOT_EVALUATED",
+  "scope": "8 synthetic rows only; no official policy approval",
+  "totals": {
+    "actual": 9,
+    "projected": 9,
+    "done": 8,
+    "pending": 0,
+    "waiting": 0
+  },
+  "original_claims": [
+    {
+      "id": "r7",
+      "row": 7,
+      "group": "百川必修",
+      "course": "百川學堂(一)",
+      "termcell": "D7",
+      "term": "112-1",
+      "raw": "86",
+      "q": 2,
+      "category": "百川必修",
+      "official": "86／2學分／已送註冊組（合成）",
+      "attempt": "DEMO-C001",
+      "credits": 2,
+      "phase": "passed",
+      "kind": "match",
+      "evidence": "DEMO-TRANSCRIPT-01 第1列",
+      "rule": "示範規則 R-ARETE-01；僅本列演示",
+      "finding": "名稱、學期、成績與學分一致；仍待承辦確認。",
+      "actions": [
+        [
+          "accept",
+          "確認認列"
+        ]
+      ]
+    },
+    {
+      "id": "r24",
+      "row": 24,
+      "group": "專業核心",
+      "course": "線性代數〔合成案例〕",
+      "termcell": "I24",
+      "term": "113-暑",
+      "raw": "88",
+      "q": 3,
+      "category": "專業核心補充課程",
+      "note": "補充課程",
+      "official": "88／3學分／已送註冊組（合成）",
+      "attempt": "DEMO-C002",
+      "credits": 3,
+      "phase": "passed",
+      "kind": "match",
+      "evidence": "DEMO-TRANSCRIPT-01 第2列",
+      "rule": "示範認列表 R-CORE-01；非任何真實核心核定",
+      "finding": "R24的補充課程字樣只是學生分類；本案例另有合成認列依據。",
+      "actions": [
+        [
+          "accept",
+          "確認認列"
+        ]
+      ]
+    },
+    {
+      "id": "r25",
+      "row": 25,
+      "group": "專業核心",
+      "course": "機器學習〔合成案例〕",
+      "termcell": "M25",
+      "term": "115-1",
+      "raw": "◎",
+      "q": 3,
+      "category": "專業核心選修",
+      "official": "修習中／3學分／尚無正式成績（合成）",
+      "attempt": "DEMO-C003",
+      "credits": 3,
+      "phase": "enrolled",
+      "kind": "conditional",
+      "evidence": "DEMO-ENROLLMENT-01 第1列",
+      "rule": "示範認列表 R-CORE-02",
+      "finding": "只能進入「假設1151通過」情境，實績不增加。",
+      "actions": [
+        [
+          "conditional",
+          "僅列條件式試算"
+        ]
+      ]
+    },
+    {
+      "id": "r39",
+      "row": 39,
+      "group": "自由選修",
+      "course": "線性代數〔合成案例〕",
+      "termcell": "I39",
+      "term": "113-暑",
+      "raw": "88",
+      "q": 3,
+      "category": "自由選修",
+      "official": "同一筆 DEMO-C002 已被第24列引用；不是另一個修課事件。",
+      "attempt": "DEMO-C002",
+      "credits": 3,
+      "phase": "passed",
+      "kind": "duplicate",
+      "evidence": "DEMO-TRANSCRIPT-01 第2列",
+      "rule": "示範總額去重規則；不抹除第24列合法認列",
+      "finding": "重複填表不能增加取得學分；可能的跨要求共用另依規則處理。",
+      "actions": [
+        [
+          "duplicate",
+          "標記重複填列，不再加總"
+        ]
+      ]
+    },
+    {
+      "id": "r56",
+      "row": 56,
+      "group": "共同課程",
+      "course": "英文（一）〔合成案例〕",
+      "termcell": "E56",
+      "term": "112-2",
+      "raw": "82",
+      "q": 3,
+      "category": "語言溝通・英文",
+      "official": "82／2學分／已送註冊組（合成）",
+      "attempt": "DEMO-C004",
+      "credits": 2,
+      "phase": "passed",
+      "kind": "credit",
+      "evidence": "DEMO-TRANSCRIPT-01 第3列",
+      "rule": "示範語言課程分類 R-LANG-01",
+      "finding": "學生Q56填3，合成正式紀錄為2。確認後在審核層記2，不改原檔Q56。",
+      "actions": [
+        [
+          "correct",
+          "依正式紀錄認列2學分"
+        ]
+      ]
+    },
+    {
+      "id": "r64",
+      "row": 64,
+      "group": "共同課程",
+      "course": "人文議題〔合成案例〕",
+      "termcell": "J64",
+      "term": "114-1",
+      "raw": "90",
+      "q": 2,
+      "category": "通識・基本素養",
+      "official": "90／2學分／類別：通識領域課程（合成）",
+      "attempt": "DEMO-C005",
+      "credits": 2,
+      "phase": "passed",
+      "kind": "category",
+      "evidence": "DEMO-TRANSCRIPT-01 第4列＋DEMO-CATALOG-01",
+      "rule": "示範課程類別 R-GE-01",
+      "finding": "學分數相同，但不能滿足基本素養。轉列只改要求分配，不多加或少算實得學分。",
+      "actions": [
+        [
+          "reclassify",
+          "轉列通識領域課程"
+        ]
+      ]
+    },
+    {
+      "id": "r76",
+      "row": 76,
+      "group": "門檻與證明",
+      "course": "體育完成狀態〔合成案例〕",
+      "termcell": "D76:M76",
+      "term": "112-1至115-1",
+      "raw": "5門及格；1門◎",
+      "q": 0,
+      "category": "六門零學分門檻",
+      "official": "五門通過、一門修習中（合成）；所有門次仍需對照適用體育規定。",
+      "attempt": null,
+      "credits": 0,
+      "phase": "enrolled",
+      "kind": "pe",
+      "evidence": "DEMO-PE-01 第1–6列",
+      "rule": "附件A76；示範不處理特殊補修/豁免",
+      "finding": "實績5門，假設本期通過為6門。學分0不代表不需要審查。",
+      "actions": [
+        [
+          "conditional",
+          "確認5門實績＋1門修習中"
+        ]
+      ]
+    },
+    {
+      "id": "r79",
+      "row": 79,
+      "group": "門檻與證明",
+      "course": "學術倫理通過聲明〔合成案例〕",
+      "termcell": "A79:S79",
+      "term": "未填",
+      "raw": "學生勾選通過",
+      "q": 0,
+      "category": "學術倫理",
+      "official": "尚未取得可信校方通過紀錄。",
+      "attempt": null,
+      "credits": 0,
+      "phase": "unknown",
+      "kind": "missing",
+      "evidence": "只有學生聲明，沒有驗證來源",
+      "rule": "附件A79；是否已通過需另外查證",
+      "finding": "「未查到」不是「不通過」。建立補件或查詢待辦，不得自動拒絕畢業。",
+      "actions": [
+        [
+          "request",
+          "請補通過證明／由系辦查證"
+        ]
+      ]
+    }
+  ],
+  "current_evidence": [
+    {
+      "id": "r7",
+      "row": 7,
+      "group": "百川必修",
+      "course": "百川學堂(一)",
+      "termcell": "D7",
+      "term": "112-1",
+      "raw": "86",
+      "q": 2,
+      "category": "百川必修",
+      "official": "86／2學分／已送註冊組（合成）",
+      "attempt": "DEMO-C001",
+      "credits": 2,
+      "phase": "passed",
+      "kind": "match",
+      "evidence": "DEMO-TRANSCRIPT-01 第1列",
+      "rule": "示範規則 R-ARETE-01；僅本列演示",
+      "finding": "名稱、學期、成績與學分一致；仍待承辦確認。",
+      "actions": [
+        [
+          "accept",
+          "確認認列"
+        ]
+      ]
+    },
+    {
+      "id": "r24",
+      "row": 24,
+      "group": "專業核心",
+      "course": "線性代數〔合成案例〕",
+      "termcell": "I24",
+      "term": "113-暑",
+      "raw": "88",
+      "q": 3,
+      "category": "專業核心補充課程",
+      "note": "補充課程",
+      "official": "88／3學分／已送註冊組（合成）",
+      "attempt": "DEMO-C002",
+      "credits": 3,
+      "phase": "passed",
+      "kind": "match",
+      "evidence": "DEMO-TRANSCRIPT-01 第2列",
+      "rule": "示範認列表 R-CORE-01；非任何真實核心核定",
+      "finding": "R24的補充課程字樣只是學生分類；本案例另有合成認列依據。",
+      "actions": [
+        [
+          "accept",
+          "確認認列"
+        ]
+      ]
+    },
+    {
+      "id": "r25",
+      "row": 25,
+      "group": "專業核心",
+      "course": "機器學習〔合成案例〕",
+      "termcell": "M25",
+      "term": "115-1",
+      "raw": "◎",
+      "q": 3,
+      "category": "專業核心選修",
+      "official": "停修／無已取得學分（合成更新）",
+      "attempt": "DEMO-C003",
+      "credits": 3,
+      "phase": "withdrawn",
+      "kind": "conditional",
+      "evidence": "DEMO-ENROLLMENT-02 第1列",
+      "rule": "示範認列表 R-CORE-02",
+      "finding": "新的合成資料顯示停修。先前條件式試算失效，只重審本列；學生原填的◎仍保留。",
+      "actions": [
+        [
+          "exclude",
+          "依停修資料不列本次採計"
+        ]
+      ]
+    },
+    {
+      "id": "r39",
+      "row": 39,
+      "group": "自由選修",
+      "course": "線性代數〔合成案例〕",
+      "termcell": "I39",
+      "term": "113-暑",
+      "raw": "88",
+      "q": 3,
+      "category": "自由選修",
+      "official": "同一筆 DEMO-C002 已被第24列引用；不是另一個修課事件。",
+      "attempt": "DEMO-C002",
+      "credits": 3,
+      "phase": "passed",
+      "kind": "duplicate",
+      "evidence": "DEMO-TRANSCRIPT-01 第2列",
+      "rule": "示範總額去重規則；不抹除第24列合法認列",
+      "finding": "重複填表不能增加取得學分；可能的跨要求共用另依規則處理。",
+      "actions": [
+        [
+          "duplicate",
+          "標記重複填列，不再加總"
+        ]
+      ]
+    },
+    {
+      "id": "r56",
+      "row": 56,
+      "group": "共同課程",
+      "course": "英文（一）〔合成案例〕",
+      "termcell": "E56",
+      "term": "112-2",
+      "raw": "82",
+      "q": 3,
+      "category": "語言溝通・英文",
+      "official": "82／2學分／已送註冊組（合成）",
+      "attempt": "DEMO-C004",
+      "credits": 2,
+      "phase": "passed",
+      "kind": "credit",
+      "evidence": "DEMO-TRANSCRIPT-01 第3列",
+      "rule": "示範語言課程分類 R-LANG-01",
+      "finding": "學生Q56填3，合成正式紀錄為2。確認後在審核層記2，不改原檔Q56。",
+      "actions": [
+        [
+          "correct",
+          "依正式紀錄認列2學分"
+        ]
+      ]
+    },
+    {
+      "id": "r64",
+      "row": 64,
+      "group": "共同課程",
+      "course": "人文議題〔合成案例〕",
+      "termcell": "J64",
+      "term": "114-1",
+      "raw": "90",
+      "q": 2,
+      "category": "通識・基本素養",
+      "official": "90／2學分／類別：通識領域課程（合成）",
+      "attempt": "DEMO-C005",
+      "credits": 2,
+      "phase": "passed",
+      "kind": "category",
+      "evidence": "DEMO-TRANSCRIPT-01 第4列＋DEMO-CATALOG-01",
+      "rule": "示範課程類別 R-GE-01",
+      "finding": "學分數相同，但不能滿足基本素養。轉列只改要求分配，不多加或少算實得學分。",
+      "actions": [
+        [
+          "reclassify",
+          "轉列通識領域課程"
+        ]
+      ]
+    },
+    {
+      "id": "r76",
+      "row": 76,
+      "group": "門檻與證明",
+      "course": "體育完成狀態〔合成案例〕",
+      "termcell": "D76:M76",
+      "term": "112-1至115-1",
+      "raw": "5門及格；1門◎",
+      "q": 0,
+      "category": "六門零學分門檻",
+      "official": "五門通過、一門修習中（合成）；所有門次仍需對照適用體育規定。",
+      "attempt": null,
+      "credits": 0,
+      "phase": "enrolled",
+      "kind": "pe",
+      "evidence": "DEMO-PE-01 第1–6列",
+      "rule": "附件A76；示範不處理特殊補修/豁免",
+      "finding": "實績5門，假設本期通過為6門。學分0不代表不需要審查。",
+      "actions": [
+        [
+          "conditional",
+          "確認5門實績＋1門修習中"
+        ]
+      ]
+    },
+    {
+      "id": "r79",
+      "row": 79,
+      "group": "門檻與證明",
+      "course": "學術倫理通過聲明〔合成案例〕",
+      "termcell": "A79:S79",
+      "term": "未填",
+      "raw": "學生勾選通過",
+      "q": 0,
+      "category": "學術倫理",
+      "official": "已通過／校方核發紀錄（合成）",
+      "attempt": null,
+      "credits": 0,
+      "phase": "passed",
+      "kind": "proof",
+      "evidence": "DEMO-ETHICS-01",
+      "rule": "附件A79；是否已通過需另外查證",
+      "finding": "合成通過證明已到達，原本待補件不能自動轉成承辦確認；需重新確認本列。",
+      "actions": [
+        [
+          "proof",
+          "確認通過證明"
+        ]
+      ]
+    }
+  ],
+  "decisions": {
+    "r7": {
+      "action": "accept",
+      "reason": "合成正式紀錄及示範規則一致，承辦確認。",
+      "at": "2026-09-08T04:16:08.870Z",
+      "data_version": 1,
+      "course": "百川學堂(一)",
+      "original_cell": "D7",
+      "evidence_ref": "DEMO-TRANSCRIPT-01 第1列"
+    },
+    "r24": {
+      "action": "accept",
+      "reason": "合成正式紀錄及示範規則一致，承辦確認。",
+      "at": "2026-09-08T04:16:09.020Z",
+      "data_version": 1,
+      "course": "線性代數〔合成案例〕",
+      "original_cell": "I24",
+      "evidence_ref": "DEMO-TRANSCRIPT-01 第2列"
+    },
+    "r39": {
+      "action": "duplicate",
+      "reason": "同一修課紀錄DEMO-C002，原表重複列入，總額不再增加。",
+      "at": "2026-09-08T04:16:09.320Z",
+      "data_version": 1,
+      "course": "線性代數〔合成案例〕",
+      "original_cell": "I39",
+      "evidence_ref": "DEMO-TRANSCRIPT-01 第2列"
+    },
+    "r56": {
+      "action": "correct",
+      "reason": "依合成正式紀錄為2學分；保留Q56原填3。",
+      "at": "2026-09-08T04:16:09.904Z",
+      "data_version": 1,
+      "course": "英文（一）〔合成案例〕",
+      "original_cell": "E56",
+      "evidence_ref": "DEMO-TRANSCRIPT-01 第3列"
+    },
+    "r64": {
+      "action": "reclassify",
+      "reason": "合成課程資料分類為領域課程，不是基本素養。",
+      "at": "2026-09-08T04:16:10.053Z",
+      "data_version": 1,
+      "course": "人文議題〔合成案例〕",
+      "original_cell": "J64",
+      "evidence_ref": "DEMO-TRANSCRIPT-01 第4列＋DEMO-CATALOG-01"
+    },
+    "r76": {
+      "action": "conditional",
+      "reason": "五門實績，加一門修習中；零學分不影響門次確認。",
+      "at": "2026-09-08T04:16:10.336Z",
+      "data_version": 1,
+      "course": "體育完成狀態〔合成案例〕",
+      "original_cell": "D76:M76",
+      "evidence_ref": "DEMO-PE-01 第1–6列"
+    },
+    "r25": {
+      "action": "exclude",
+      "reason": "新的合成選課資料已停修，本次試算不再列入。",
+      "at": "2026-09-08T04:16:11.186Z",
+      "data_version": 2,
+      "course": "機器學習〔合成案例〕",
+      "original_cell": "M25",
+      "evidence_ref": "DEMO-ENROLLMENT-02 第1列"
+    },
+    "r79": {
+      "action": "proof",
+      "reason": "已核對合成校方通過證明DEMO-ETHICS-01。",
+      "at": "2026-09-08T04:16:11.387Z",
+      "data_version": 3,
+      "course": "學術倫理通過聲明〔合成案例〕",
+      "original_cell": "A79:S79",
+      "evidence_ref": "DEMO-ETHICS-01"
+    }
+  },
+  "audit_log": [
+    {
+      "at": "2026-09-08T04:16:08.686Z",
+      "data_version": 1,
+      "type": "收件確認",
+      "message": "載入8列合成填表案例；未解析任何真實學生資料。"
+    },
+    {
+      "at": "2026-09-08T04:16:08.871Z",
+      "data_version": 1,
+      "type": "承辦處置",
+      "message": "第7列：已確認認列",
+      "row_id": "r7",
+      "previous": null,
+      "decision": {
+        "action": "accept",
+        "reason": "合成正式紀錄及示範規則一致，承辦確認。",
+        "at": "2026-09-08T04:16:08.870Z",
+        "data_version": 1,
+        "course": "百川學堂(一)",
+        "original_cell": "D7",
+        "evidence_ref": "DEMO-TRANSCRIPT-01 第1列"
+      }
+    },
+    {
+      "at": "2026-09-08T04:16:09.020Z",
+      "data_version": 1,
+      "type": "承辦處置",
+      "message": "第24列：已確認認列",
+      "row_id": "r24",
+      "previous": null,
+      "decision": {
+        "action": "accept",
+        "reason": "合成正式紀錄及示範規則一致，承辦確認。",
+        "at": "2026-09-08T04:16:09.020Z",
+        "data_version": 1,
+        "course": "線性代數〔合成案例〕",
+        "original_cell": "I24",
+        "evidence_ref": "DEMO-TRANSCRIPT-01 第2列"
+      }
+    },
+    {
+      "at": "2026-09-08T04:16:09.320Z",
+      "data_version": 1,
+      "type": "承辦處置",
+      "message": "第39列：重複填列",
+      "row_id": "r39",
+      "previous": null,
+      "decision": {
+        "action": "duplicate",
+        "reason": "同一修課紀錄DEMO-C002，原表重複列入，總額不再增加。",
+        "at": "2026-09-08T04:16:09.320Z",
+        "data_version": 1,
+        "course": "線性代數〔合成案例〕",
+        "original_cell": "I39",
+        "evidence_ref": "DEMO-TRANSCRIPT-01 第2列"
+      }
+    },
+    {
+      "at": "2026-09-08T04:16:09.904Z",
+      "data_version": 1,
+      "type": "承辦處置",
+      "message": "第56列：已更正認列學分",
+      "row_id": "r56",
+      "previous": null,
+      "decision": {
+        "action": "correct",
+        "reason": "依合成正式紀錄為2學分；保留Q56原填3。",
+        "at": "2026-09-08T04:16:09.904Z",
+        "data_version": 1,
+        "course": "英文（一）〔合成案例〕",
+        "original_cell": "E56",
+        "evidence_ref": "DEMO-TRANSCRIPT-01 第3列"
+      }
+    },
+    {
+      "at": "2026-09-08T04:16:10.053Z",
+      "data_version": 1,
+      "type": "承辦處置",
+      "message": "第64列：已轉列類別",
+      "row_id": "r64",
+      "previous": null,
+      "decision": {
+        "action": "reclassify",
+        "reason": "合成課程資料分類為領域課程，不是基本素養。",
+        "at": "2026-09-08T04:16:10.053Z",
+        "data_version": 1,
+        "course": "人文議題〔合成案例〕",
+        "original_cell": "J64",
+        "evidence_ref": "DEMO-TRANSCRIPT-01 第4列＋DEMO-CATALOG-01"
+      }
+    },
+    {
+      "at": "2026-09-08T04:16:10.203Z",
+      "data_version": 1,
+      "type": "承辦處置",
+      "message": "第25列：僅條件式試算",
+      "row_id": "r25",
+      "previous": null,
+      "decision": {
+        "action": "conditional",
+        "reason": "合成選課資料顯示修習中；只列入1151通過假設。",
+        "at": "2026-09-08T04:16:10.203Z",
+        "data_version": 1,
+        "course": "機器學習〔合成案例〕",
+        "original_cell": "M25",
+        "evidence_ref": "DEMO-ENROLLMENT-01 第1列"
+      }
+    },
+    {
+      "at": "2026-09-08T04:16:10.336Z",
+      "data_version": 1,
+      "type": "承辦處置",
+      "message": "第76列：僅條件式試算",
+      "row_id": "r76",
+      "previous": null,
+      "decision": {
+        "action": "conditional",
+        "reason": "五門實績，加一門修習中；零學分不影響門次確認。",
+        "at": "2026-09-08T04:16:10.336Z",
+        "data_version": 1,
+        "course": "體育完成狀態〔合成案例〕",
+        "original_cell": "D76:M76",
+        "evidence_ref": "DEMO-PE-01 第1–6列"
+      }
+    },
+    {
+      "at": "2026-09-08T04:16:10.486Z",
+      "data_version": 1,
+      "type": "承辦處置",
+      "message": "第79列：待補件/查證",
+      "row_id": "r79",
+      "previous": null,
+      "decision": {
+        "action": "request",
+        "reason": "請附學術倫理通過紀錄或由系辦向主責單位查證。",
+        "at": "2026-09-08T04:16:10.485Z",
+        "data_version": 1,
+        "course": "學術倫理通過聲明〔合成案例〕",
+        "original_cell": "A79:S79",
+        "evidence_ref": "只有學生聲明，沒有驗證來源"
+      }
+    },
+    {
+      "at": "2026-09-08T04:16:11.039Z",
+      "data_version": 2,
+      "type": "資料更新/待重審",
+      "message": "第25列由修習中更新為停修；該列舊處置失效，其他列保留。",
+      "row_id": "r25",
+      "invalidated_decision": {
+        "action": "conditional",
+        "reason": "合成選課資料顯示修習中；只列入1151通過假設。",
+        "at": "2026-09-08T04:16:10.203Z",
+        "data_version": 1,
+        "course": "機器學習〔合成案例〕",
+        "original_cell": "M25",
+        "evidence_ref": "DEMO-ENROLLMENT-01 第1列"
+      }
+    },
+    {
+      "at": "2026-09-08T04:16:11.186Z",
+      "data_version": 2,
+      "type": "承辦處置",
+      "message": "第25列：不採計",
+      "row_id": "r25",
+      "previous": null,
+      "decision": {
+        "action": "exclude",
+        "reason": "新的合成選課資料已停修，本次試算不再列入。",
+        "at": "2026-09-08T04:16:11.186Z",
+        "data_version": 2,
+        "course": "機器學習〔合成案例〕",
+        "original_cell": "M25",
+        "evidence_ref": "DEMO-ENROLLMENT-02 第1列"
+      }
+    },
+    {
+      "at": "2026-09-08T04:16:11.235Z",
+      "data_version": 3,
+      "type": "資料更新/待重審",
+      "message": "第79列新增通過證明；等待承辦重新確認。",
+      "row_id": "r79",
+      "invalidated_decision": {
+        "action": "request",
+        "reason": "請附學術倫理通過紀錄或由系辦向主責單位查證。",
+        "at": "2026-09-08T04:16:10.485Z",
+        "data_version": 1,
+        "course": "學術倫理通過聲明〔合成案例〕",
+        "original_cell": "A79:S79",
+        "evidence_ref": "只有學生聲明，沒有驗證來源"
+      }
+    },
+    {
+      "at": "2026-09-08T04:16:11.387Z",
+      "data_version": 3,
+      "type": "承辦處置",
+      "message": "第79列：已查證通過",
+      "row_id": "r79",
+      "previous": null,
+      "decision": {
+        "action": "proof",
+        "reason": "已核對合成校方通過證明DEMO-ETHICS-01。",
+        "at": "2026-09-08T04:16:11.387Z",
+        "data_version": 3,
+        "course": "學術倫理通過聲明〔合成案例〕",
+        "original_cell": "A79:S79",
+        "evidence_ref": "DEMO-ETHICS-01"
+      }
+    },
+    {
+      "at": "2026-09-08T04:16:11.568Z",
+      "data_version": 3,
+      "type": "示範封存",
+      "message": "封存局部核對紀錄；全案資格未判定，非有效簽章。"
+    }
+  ],
+  "notice_draft": "同學您好：\n本次為示範範圍的預審核對，並非畢業資格核准。\n・原表第79列「學術倫理通過聲明〔合成案例〕」：請附學術倫理通過紀錄或由系辦向主責單位查證。\n\n「含1151」的合計以本學期修習中課程通過為前提；若停修、退選或未通過，須重新確認。\n請以原案件回覆補件，不必重新說明所有未變動課程。",
+  "not_sent": true,
+  "not_a_valid_signature": true
+}

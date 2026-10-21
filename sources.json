@@ -1,0 +1,98 @@
+[
+  {
+    "id": "F01",
+    "title": "使用者附件：自我檢核(百川-空白)112入學適用.xlsx",
+    "locator": "原始 Sheet1 （名稱尾端有空白），A1:S98",
+    "kind": "uploaded_template",
+    "sha256": "a2c22bd18ae618fdacbc290d90ed1da89e331d37b424dfc095ae59c57657f199",
+    "note": "直接讀取OOXML並以artifact_tool匯入、渲染。未改動原檔。空白表沒有真實學生資料。",
+    "checked_on": "2026-09-08"
+  },
+  {
+    "id": "S01",
+    "title": "百川112學年度必修科目表",
+    "url": "https://aa.nycu.edu.tw/userfiles/aach/files/20231011125120537.pdf",
+    "scope": "112學籍年度基準；不是115入學生新規",
+    "reviewed": "第一、二頁原文及表格截圖",
+    "checked_on": "2026-09-08"
+  },
+  {
+    "id": "S02",
+    "title": "交大校區115學年度第一學期體育課程選課說明",
+    "url": "https://peo.nycu.edu.tw/peo/ch/app/data/doc?detailNo=1508384879681736704&module=nycu0051&type=s",
+    "scope": "第1頁：大四1學分體育是否採計由學系自訂；體育護理合計上限",
+    "reviewed": "第1頁原文及截圖",
+    "checked_on": "2026-09-08"
+  },
+  {
+    "id": "S03",
+    "title": "國立陽明交通大學學生抵免學分辦法（112年修正版）",
+    "url": "https://peo.nycu.edu.tw/peo/ch/app/data/doc?detailNo=1158662646237499392&module=nycu0014&type=s",
+    "scope": "第二條抵修/免修不同；第三條研究所先修之證明；第七條權責單位",
+    "note": "目前公開官方副本；正式系統發布前仍須由教務處核對當時有效版本",
+    "checked_on": "2026-09-08"
+  },
+  {
+    "id": "S04",
+    "title": "註冊組：學士班學生畢業離校（115-01-29更新）",
+    "url": "https://aa.nycu.edu.tw/aa/ch/app/artwebsite/view?id=2475&module=artwebsite&serno=2e0aa8b5-b5d1-4291-8e49-51c0b24b6bb7",
+    "scope": "當期成績需已送註冊組；正式線上離校另有流程",
+    "checked_on": "2026-09-08"
+  },
+  {
+    "id": "H01",
+    "title": "GOV.UK Task list",
+    "url": "https://design-system.service.gov.uk/components/task-list/",
+    "scope": "工作項目與完成狀態",
+    "checked_on": "2026-09-08"
+  },
+  {
+    "id": "H02",
+    "title": "GOV.UK Check answers",
+    "url": "https://design-system.service.gov.uk/patterns/check-answers/",
+    "scope": "送出前確認；大型分段交易可分節檢查",
+    "checked_on": "2026-09-08"
+  },
+  {
+    "id": "H03",
+    "title": "GOV.UK Error summary",
+    "url": "https://design-system.service.gov.uk/components/error-summary/",
+    "scope": "錯誤摘要與欄位錯誤連結",
+    "checked_on": "2026-09-08"
+  },
+  {
+    "id": "H04",
+    "title": "W3C WCAG 2.2",
+    "url": "https://www.w3.org/TR/WCAG22/",
+    "scope": "鍵盤、焦點、資訊關聯、顏色以外識別、重排、操作目標",
+    "checked_on": "2026-09-08"
+  },
+  {
+    "id": "H05",
+    "title": "W3C Understanding SC 3.3.4",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-legal-financial-data",
+    "scope": "重要提交的確認、修正或可逆機制",
+    "checked_on": "2026-09-08"
+  },
+  {
+    "id": "H06",
+    "title": "W3C Understanding SC 4.1.3 Status Messages",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html",
+    "scope": "無需跳轉焦點的狀態訊息",
+    "checked_on": "2026-09-08"
+  },
+  {
+    "id": "H07",
+    "title": "Microsoft HAX Guideline 9",
+    "url": "https://www.microsoft.com/en-us/haxtoolkit/guideline/support-efficient-correction/",
+    "scope": "自動對應錯誤時的有效更正",
+    "checked_on": "2026-09-08"
+  },
+  {
+    "id": "H08",
+    "title": "Microsoft Research Guidelines for human-AI interaction design",
+    "url": "https://www.microsoft.com/en-us/research/blog/guidelines-for-human-ai-interaction-design/",
+    "scope": "不確定時限制服務、讓使用者了解系統能力與更正",
+    "checked_on": "2026-09-08"
+  }
+]

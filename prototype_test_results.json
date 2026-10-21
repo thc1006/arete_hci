@@ -1,0 +1,102 @@
+{
+  "scope": "Local synthetic UI smoke tests only; no real academic records or production backend",
+  "passed": 24,
+  "checks": [
+    {
+      "name": "Initial screen is work queue",
+      "passed": true
+    },
+    {
+      "name": "Cannot start without scope acknowledgement",
+      "passed": true
+    },
+    {
+      "name": "Starts without any automatic approvals",
+      "passed": true
+    },
+    {
+      "name": "Verified confirmed courses give 5 unique credits",
+      "passed": true
+    },
+    {
+      "name": "Correction requires rationale",
+      "passed": true
+    },
+    {
+      "name": "Duplicate form row does not double credits",
+      "passed": true
+    },
+    {
+      "name": "Credit correction uses official demo value, not student claim",
+      "passed": true
+    },
+    {
+      "name": "Reclassification counts the credit once",
+      "passed": true
+    },
+    {
+      "name": "In-progress is only in projection",
+      "passed": true
+    },
+    {
+      "name": "Missing evidence is pending, not automatic failure",
+      "passed": true
+    },
+    {
+      "name": "All eight rows can be processed while a proof is still pending",
+      "passed": true
+    },
+    {
+      "name": "Whole degree is explicitly not evaluated",
+      "passed": true
+    },
+    {
+      "name": "Graduate exclusion preview is blocked, not silently accepted",
+      "passed": true
+    },
+    {
+      "name": "Graduate preview leaves actual credits unchanged",
+      "passed": true
+    },
+    {
+      "name": "New evidence invalidates only affected row",
+      "passed": true
+    },
+    {
+      "name": "Withdrawal removes conditional credits",
+      "passed": true
+    },
+    {
+      "name": "Submitted in-progress marker remains immutable",
+      "passed": true
+    },
+    {
+      "name": "New proof requires fresh review",
+      "passed": true
+    },
+    {
+      "name": "Sealing requires scope confirmation",
+      "passed": true
+    },
+    {
+      "name": "Export refuses a whole-degree determination",
+      "passed": true
+    },
+    {
+      "name": "Already sealed snapshot stays unchanged",
+      "passed": true
+    },
+    {
+      "name": "Student original claimed credit stays 3",
+      "passed": true
+    },
+    {
+      "name": "Review workspace remains usable at narrow viewport",
+      "passed": true
+    },
+    {
+      "name": "No uncaught browser JavaScript errors",
+      "passed": true
+    }
+  ]
+}

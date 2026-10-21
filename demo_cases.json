@@ -1,0 +1,203 @@
+[
+  {
+    "id": "r7",
+    "row": 7,
+    "group": "百川必修",
+    "course": "百川學堂(一)",
+    "termcell": "D7",
+    "term": "112-1",
+    "raw": "86",
+    "q": 2,
+    "category": "百川必修",
+    "official": "86／2學分／已送註冊組（合成）",
+    "attempt": "DEMO-C001",
+    "credits": 2,
+    "phase": "passed",
+    "kind": "match",
+    "evidence": "DEMO-TRANSCRIPT-01 第1列",
+    "rule": "示範規則 R-ARETE-01；僅本列演示",
+    "finding": "名稱、學期、成績與學分一致；仍待承辦確認。",
+    "actions": [
+      [
+        "accept",
+        "確認認列"
+      ]
+    ]
+  },
+  {
+    "id": "r24",
+    "row": 24,
+    "group": "專業核心",
+    "course": "線性代數〔合成案例〕",
+    "termcell": "I24",
+    "term": "113-暑",
+    "raw": "88",
+    "q": 3,
+    "category": "專業核心補充課程",
+    "note": "補充課程",
+    "official": "88／3學分／已送註冊組（合成）",
+    "attempt": "DEMO-C002",
+    "credits": 3,
+    "phase": "passed",
+    "kind": "match",
+    "evidence": "DEMO-TRANSCRIPT-01 第2列",
+    "rule": "示範認列表 R-CORE-01；非任何真實核心核定",
+    "finding": "R24的補充課程字樣只是學生分類；本案例另有合成認列依據。",
+    "actions": [
+      [
+        "accept",
+        "確認認列"
+      ]
+    ]
+  },
+  {
+    "id": "r25",
+    "row": 25,
+    "group": "專業核心",
+    "course": "機器學習〔合成案例〕",
+    "termcell": "M25",
+    "term": "115-1",
+    "raw": "◎",
+    "q": 3,
+    "category": "專業核心選修",
+    "official": "修習中／3學分／尚無正式成績（合成）",
+    "attempt": "DEMO-C003",
+    "credits": 3,
+    "phase": "enrolled",
+    "kind": "conditional",
+    "evidence": "DEMO-ENROLLMENT-01 第1列",
+    "rule": "示範認列表 R-CORE-02",
+    "finding": "只能進入「假設1151通過」情境，實績不增加。",
+    "actions": [
+      [
+        "conditional",
+        "僅列條件式試算"
+      ]
+    ]
+  },
+  {
+    "id": "r39",
+    "row": 39,
+    "group": "自由選修",
+    "course": "線性代數〔合成案例〕",
+    "termcell": "I39",
+    "term": "113-暑",
+    "raw": "88",
+    "q": 3,
+    "category": "自由選修",
+    "official": "同一筆 DEMO-C002 已被第24列引用；不是另一個修課事件。",
+    "attempt": "DEMO-C002",
+    "credits": 3,
+    "phase": "passed",
+    "kind": "duplicate",
+    "evidence": "DEMO-TRANSCRIPT-01 第2列",
+    "rule": "示範總額去重規則；不抹除第24列合法認列",
+    "finding": "重複填表不能增加取得學分；可能的跨要求共用另依規則處理。",
+    "actions": [
+      [
+        "duplicate",
+        "標記重複填列，不再加總"
+      ]
+    ]
+  },
+  {
+    "id": "r56",
+    "row": 56,
+    "group": "共同課程",
+    "course": "英文（一）〔合成案例〕",
+    "termcell": "E56",
+    "term": "112-2",
+    "raw": "82",
+    "q": 3,
+    "category": "語言溝通・英文",
+    "official": "82／2學分／已送註冊組（合成）",
+    "attempt": "DEMO-C004",
+    "credits": 2,
+    "phase": "passed",
+    "kind": "credit",
+    "evidence": "DEMO-TRANSCRIPT-01 第3列",
+    "rule": "示範語言課程分類 R-LANG-01",
+    "finding": "學生Q56填3，合成正式紀錄為2。確認後在審核層記2，不改原檔Q56。",
+    "actions": [
+      [
+        "correct",
+        "依正式紀錄認列2學分"
+      ]
+    ]
+  },
+  {
+    "id": "r64",
+    "row": 64,
+    "group": "共同課程",
+    "course": "人文議題〔合成案例〕",
+    "termcell": "J64",
+    "term": "114-1",
+    "raw": "90",
+    "q": 2,
+    "category": "通識・基本素養",
+    "official": "90／2學分／類別：通識領域課程（合成）",
+    "attempt": "DEMO-C005",
+    "credits": 2,
+    "phase": "passed",
+    "kind": "category",
+    "evidence": "DEMO-TRANSCRIPT-01 第4列＋DEMO-CATALOG-01",
+    "rule": "示範課程類別 R-GE-01",
+    "finding": "學分數相同，但不能滿足基本素養。轉列只改要求分配，不多加或少算實得學分。",
+    "actions": [
+      [
+        "reclassify",
+        "轉列通識領域課程"
+      ]
+    ]
+  },
+  {
+    "id": "r76",
+    "row": 76,
+    "group": "門檻與證明",
+    "course": "體育完成狀態〔合成案例〕",
+    "termcell": "D76:M76",
+    "term": "112-1至115-1",
+    "raw": "5門及格；1門◎",
+    "q": 0,
+    "category": "六門零學分門檻",
+    "official": "五門通過、一門修習中（合成）；所有門次仍需對照適用體育規定。",
+    "attempt": null,
+    "credits": 0,
+    "phase": "enrolled",
+    "kind": "pe",
+    "evidence": "DEMO-PE-01 第1–6列",
+    "rule": "附件A76；示範不處理特殊補修/豁免",
+    "finding": "實績5門，假設本期通過為6門。學分0不代表不需要審查。",
+    "actions": [
+      [
+        "conditional",
+        "確認5門實績＋1門修習中"
+      ]
+    ]
+  },
+  {
+    "id": "r79",
+    "row": 79,
+    "group": "門檻與證明",
+    "course": "學術倫理通過聲明〔合成案例〕",
+    "termcell": "A79:S79",
+    "term": "未填",
+    "raw": "學生勾選通過",
+    "q": 0,
+    "category": "學術倫理",
+    "official": "尚未取得可信校方通過紀錄。",
+    "attempt": null,
+    "credits": 0,
+    "phase": "unknown",
+    "kind": "missing",
+    "evidence": "只有學生聲明，沒有驗證來源",
+    "rule": "附件A79；是否已通過需另外查證",
+    "finding": "「未查到」不是「不通過」。建立補件或查詢待辦，不得自動拒絕畢業。",
+    "actions": [
+      [
+        "request",
+        "請補通過證明／由系辦查證"
+      ]
+    ]
+  }
+]
